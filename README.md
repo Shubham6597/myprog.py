@@ -1,2 +1,2 @@
 # myprog.py
-Python program to run programs by reding the text given by the user.
+Python program to run programs by reading the text given by the user.

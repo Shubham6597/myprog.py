@@ -18,9 +18,11 @@ Windows Operating System
 
 run below command in command prompt
 
+\
 pip install pyttsx3
 
 or
 
+\
 conda install pyttsx3
 

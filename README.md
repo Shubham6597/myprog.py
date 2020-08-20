@@ -1,5 +1,5 @@
 # myprog.py
-It is a Python program to run programs by reading the text given by the user.
+It is a Python program for windows to run programs by reading the text given by the user.
 
 ***When you need to add a path in environment variable:
 

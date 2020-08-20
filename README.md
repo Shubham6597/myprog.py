@@ -17,12 +17,11 @@ Windows Operating System
 ***How to add pyttsx3 module
 
 run below command in command prompt
-
-\
+```
 pip install pyttsx3
-
+```
 or
-
-\
+```
 conda install pyttsx3
 
+```

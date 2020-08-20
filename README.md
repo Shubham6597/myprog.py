@@ -1,7 +1,7 @@
 # myprog.py
 It is a Python program for windows to run programs by reading the text given by the user.
 
-***When you need to add a path in environment variable:
+**When you need to add a path in environment variable:**
 
 If a message like shown below appears on your screen then you need to add its location path in Environment Variables.
 
@@ -9,12 +9,12 @@ If a message like shown below appears on your screen then you need to add its lo
 
 A file is already added on how to add path in Environment Variables.
 
-***Prerequisite:
+**Prerequisite:**
 
 Python 3.5 and above with pyttsx3 module 
 Windows Operating System
 
-***How to add pyttsx3 module
+**How to add pyttsx3 module**
 
 run below command in command prompt
 ```

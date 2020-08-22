@@ -10,6 +10,11 @@ If a message like shown below appears on your screen then you need to add its lo
 
 A file is already added on how to add path in Environment Variables.
 
+**There are 2 application:**
+
+1. Python Application - This take written input from the user.
+
+2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application.
 
 **Prerequisite:**
 

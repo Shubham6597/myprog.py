@@ -12,7 +12,7 @@ A file is already added on how to add path in Environment Variables.
 
 **There are 2 application:**
 
-1. Python Application - This take written input from the user.
+1. PythonApplication - This take written input from the user.
 
 2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application.
 

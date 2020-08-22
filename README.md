@@ -16,6 +16,16 @@ A file is already added on how to add path in Environment Variables.
 
 2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application.
 
+Before using this application you need to run below mentioned commands in command promt to install the required modules:
+``` 
+pip install speechrecognition
+```
+```
+pip install pyaudio
+```
+``` 
+pip install pyttsx3
+```
 **Prerequisite:**
 
 Python 3.5 and above with pyttsx3 module 

@@ -24,7 +24,7 @@ conda install pyttsx3
 
 ```
 
-2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application.
+2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application. But you need to have proper net connection for its functioning.
 
 Before using this application you need to run below mentioned commands in command promt to install the required modules:
 ``` 

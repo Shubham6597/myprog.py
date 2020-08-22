@@ -14,6 +14,16 @@ A file is already added on how to add path in Environment Variables.
 
 1. PythonApplication.py - This take written input from the user.
 
+Run below mentioned command in command prompt to add pyttsx3 module before using this application.
+```
+pip install pyttsx3
+```
+or
+```
+conda install pyttsx3
+
+```
+
 2. NetBasedApplication - This takes voice input from the user and one needs to say Lucky along with the command to run application.
 
 Before using this application you need to run below mentioned commands in command promt to install the required modules:
@@ -32,14 +42,3 @@ Python 3.5 and above with pyttsx3 module
 Windows Operating System
 
 
-**How to add pyttsx3 module**
-
-run below command in command prompt
-```
-pip install pyttsx3
-```
-or
-```
-conda install pyttsx3
-
-```

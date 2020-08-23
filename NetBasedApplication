@@ -25,7 +25,8 @@ def SpeakText(command):
 # Loop infinitely for user to
 # speak
 pyttsx3.speak("Hi I'm Lucky, Welcome to my windows tools")
-print("Write exit or quit, whenever the job is done", end='\n')
+print("Say options to view menu", end='\n')
+print("Say exit or quit, whenever the job is done", end='\n')
 while True:
     # Exception handling to handle
     # exceptions at the runtime
@@ -59,7 +60,39 @@ while True:
 
         if (" not " in p) or ("don't" in p) or ("do not" in p):
             print("Plz not include words like not, don't and do not")
-        elif (("run" in p) or ("launch" in p) or ("execute" in p) or ("open" in p) or ("show" in p) or ("display" in p)):
+        elif ("options" in p):
+            print("""
+Calculator
+Check Disk Utility
+Chrome
+Control Panel
+Date and Time Properties
+Disk Partition Manager
+Documents (open 'My Documents' folder)
+Downloads (open 'Downloads' folder)
+DVD Player
+Edit Environment Variables
+Firewall Control Panel
+Folders Properties
+Keyboard Properties
+Microsoft Excel(May need to add path)
+Microsoft Power Point(May need to add path)
+Microsoft Word(May need to add path)
+Mouse Properties
+MS Paint
+Notepad
+On Screen Keyboard
+Resource Monitor
+Shut Down Windows
+Sound Recorder
+Sound Volume
+System Information
+Task Manager
+Windows Explorer
+Windows Update
+WordPad
+VirtualBox""")
+        elif (("run" in p) or ("launch" in p) or ("execute" in p) or ("open" in p) or ("show" in p) or ("display" in p) or ("play" in p) or ("close" in p) or ("edit" in p) or ("see" in p) or ("open" in p) or ("check" in p) or ("change" in p) or ("set" in p)):
             if (("chrome" in p) or ("browser" in p) or ("google" in p)):
                 os.system("START chrome")
             elif (("notepad" in p) or ("editor" in p)):
@@ -108,23 +141,28 @@ while True:
                 os.system("START explorer Downloads")
             elif (("virtualbox" in p) or ("virtual box" in p)):
                 os.system("START VirtualBox")
-        elif (("run" in p) or ("launch" in p) or ("open" in p) or ("play" in p)) and ("player" in p):
-            os.system("START dvdplay")
-        elif (("change" in p) or ("launch" in p) or ("open" in p) or ("close" in p)) and ("firewall" in p):
-            os.system("START firewall.cpl")
-        elif (("edit" in p) or ("see" in p) or ("open" in p) or ("check" in p)) and (("environment variables" in p) or ("environmental variables" in p) or ("environment variable" in p) or ("environmental variable" in p)):
-            os.system("START SystemPropertiesAdvanced")
-        elif (("run" in p) or ("launch" in p) or ("open" in p) or ("change" in p)) and ("keyboard" in p) and ("properties" in p):
-            os.system("START control keyboard")
-        elif (("run" in p) or ("launch" in p) or ("open" in p) or ("execute" in p) or ("set" in p)) and (("date and time properties" in p) or ("date" in p) or ("time" in p)):
-            os.system("START timedate.cpl")
+            elif ("player" in p):
+                os.system("START dvdplay")
+            elif ("firewall" in p):
+                os.system("START firewall.cpl")
+            elif ("environment variables" in p) or ("environmental variables" in p) or ("environment variable" in p) or ("environmental variable" in p):
+                os.system("START SystemPropertiesAdvanced")
+            elif ("keyboard" in p) and ("properties" in p):
+                os.system("START control keyboard")
+            elif ("date and time properties" in p) or ("date" in p) or ("time" in p):
+                os.system("START timedate.cpl")
+            elif (("shut down" in p) or ("turn off" in p)):
+                os.system("shutdown")
+            else:
+                pyttsx3.speak("Wrong input, Say options to view menu")
+                print('dont support')
         elif (("shut down" in p) or ("turn off" in p)):
             os.system("shutdown")
         elif ("exit" in p) or ("quit" in p):
             print("Terminating.....")
             break
         else:
-            pyttsx3.speak("Wrong input")
+            pyttsx3.speak("Wrong input, Say options to view menu")
             print('dont support')
 
         pyttsx3.speak("You can say quit or exit whenever the work is done")

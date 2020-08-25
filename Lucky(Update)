@@ -22,6 +22,8 @@ def SpeakText(command):
     engine.runAndWait()
 
 
+print("Tell me what should I run for you : ", end='')
+
 # Loop infinitely for user to
 # speak
 pyttsx3.speak("Hi I'm Lucky, Welcome to my windows tools")
@@ -31,32 +33,38 @@ while True:
     # Exception handling to handle
     # exceptions at the runtime
     pyttsx3.speak("How could I help you")
-    print("Tell me what should I run for you : ", end='')
-    print("Say .....")
-    try:
-        # use the microphone as source for input.
-        with sr.Microphone() as source2:
-            # wait for a second to let the recognizer
-            # adjust the energy threshold based on
-            # the surrounding noise level
-            r.adjust_for_ambient_noise(source2, duration=0.3)
-        # listens for the user's input
-            audio2 = r.listen(source2)
-        # Using ggogle to recognize audio
-            MyText = "..."
-            MyText = r.recognize_google(audio2)
+    print('Write "Hey" for text input or press enter to Say', end='\n')
+    hey = input()
+    if ("Hey" in hey):
+        print("Write...")
+        q = input()
+    else:
+        print("Say(Must include Lucky in command)...")
+        try:
+            # use the microphone as source for input.
+            with sr.Microphone() as source2:
+                # wait for a second to let the recognizer
+                # adjust the energy threshold based on
+                # the surrounding noise level
+                r.adjust_for_ambient_noise(source2, duration=0.3)
+            # listens for the user's input
+                audio2 = r.listen(source2)
+            # Using ggogle to recognize audio
+                MyText = "..."
+                MyText = r.recognize_google(audio2)
 
-            print(MyText)
-            SpeakText(MyText)
-    except sr.RequestError as e:
-        print("Could not request results; {0}".format(e))
-    except sr.UnknownValueError:
-        print("unknown error occured")
+                print(MyText)
+                SpeakText(MyText)
+        except sr.RequestError as e:
+            print("Could not request results; {0}".format(e))
+        except sr.UnknownValueError:
+            print("unknown error occured")
 
-    q = MyText
+        q = MyText
+
     p = q.lower()
 
-    if ("lucky" in p):
+    if ("lucky" in p or "Hey" in hey):
         if (" not " in p) or ("don't" in p) or ("do not" in p):
             print("Plz not include words like not, don't and do not")
         elif ("how are you" in p):
@@ -192,3 +200,4 @@ VirtualBox""")
 
         else:
             pyttsx3.speak("Say Lucky along with your command")
+

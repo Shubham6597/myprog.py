@@ -1,0 +1,194 @@
+# Python program to translate
+# speech to text and text to speech
+
+
+import speech_recognition as sr
+import pyttsx3
+import os
+
+
+# Initialize the recognizer
+r = sr.Recognizer()
+
+# Function to convert text to
+# speech
+
+
+def SpeakText(command):
+
+    # Initialize the engine
+    engine = pyttsx3.init()
+    engine.say(command)
+    engine.runAndWait()
+
+
+# Loop infinitely for user to
+# speak
+pyttsx3.speak("Hi I'm Lucky, Welcome to my windows tools")
+print("Say options to view menu", end='\n')
+print("Say exit or quit, whenever the job is done", end='\n')
+while True:
+    # Exception handling to handle
+    # exceptions at the runtime
+    pyttsx3.speak("How could I help you")
+    print("Tell me what should I run for you : ", end='')
+    print("Say .....")
+    try:
+        # use the microphone as source for input.
+        with sr.Microphone() as source2:
+            # wait for a second to let the recognizer
+            # adjust the energy threshold based on
+            # the surrounding noise level
+            r.adjust_for_ambient_noise(source2, duration=0.3)
+        # listens for the user's input
+            audio2 = r.listen(source2)
+        # Using ggogle to recognize audio
+            MyText = "..."
+            MyText = r.recognize_google(audio2)
+
+            print(MyText)
+            SpeakText(MyText)
+    except sr.RequestError as e:
+        print("Could not request results; {0}".format(e))
+    except sr.UnknownValueError:
+        print("unknown error occured")
+
+    q = MyText
+    p = q.lower()
+
+    if ("lucky" in p):
+        if (" not " in p) or ("don't" in p) or ("do not" in p):
+            print("Plz not include words like not, don't and do not")
+        elif ("how are you" in p):
+            pyttsx3.speak("I'm feeling great to help you")
+            print("I'm feeling great to help you")
+        # elif ("wait" in p):
+        elif ("options" in p):
+            print("""
+Calculator
+Check Disk Utility
+Chrome
+Control Panel
+Date and Time Properties
+Disk Partition Manager
+Documents (open 'My Documents' folder)
+Downloads (open 'Downloads' folder)
+DVD Player
+Edit Environment Variables
+Facebook
+Firefox Browser
+Firewall Control Panel
+Folders Properties
+Keyboard Properties
+Microsoft Excel(May need to add path)
+Microsoft Power Point(May need to add path)
+Microsoft Word(May need to add path)
+Mouse Properties
+MS Paint
+Notepad
+On Screen Keyboard
+Resource Monitor
+Shut Down Windows
+Sound Recorder
+Sound Volume
+System Information
+Task Manager
+WhatsApp Web
+Windows Explorer
+Windows Update
+WordPad
+VirtualBox""")
+        elif (("run" in p) or ("launch" in p) or ("execute" in p) or ("open" in p) or ("show" in p) or ("display" in p) or ("play" in p) or ("close" in p) or ("edit" in p) or ("see" in p) or ("open" in p) or ("check" in p) or ("change" in p) or ("set" in p)):
+            if (("chrome" in p) or ("browser" in p) or ("google" in p)):
+                os.system("START chrome")
+            elif ("facebook" in p):
+                os.system("START https://www.facebook.com/login/")
+            elif ("gmail" in p):
+                os.system("START https://mail.google.com/mail")
+            elif ("whatsappweb" in p) or ("whatsapp web" in p):
+                os.system("START https://web.whatsapp.com/")
+            elif ("firefox" in p) or ("mozilla" in p):
+                os.system("firefox")
+            elif (("notepad" in p) or ("editor" in p)):
+                os.system("START notepad")
+            elif (("calculator" in p) or ("calculate" in p) or ("calculation" in p)):
+                os.system("START calc")
+            elif ((("check" in p) and ("disk" in p)) or ("chkdsk" in p)):
+                os.system("START chkdsk")
+            elif ("control panel" in p):
+                os.system("START control")
+            elif (("disk" in p) and ("partition" in p) or ("diskpart" in p)):
+                os.system("START diskpart")
+            elif (("documents" in p) or ("document" in p)):
+                os.system("START explorer Documents")
+            elif ("folders properties" in p):
+                os.system("START control folders")
+            elif ("paint" in p):
+                os.system("START mspaint")
+            elif ("mouse properties" in p):
+                os.system("START control mouse")
+            elif ("excel" in p):
+                os.system("START Excel")
+            elif (("powerpoint" in p) or ("power point" in p)):
+                os.system("START powerpnt")
+            elif (("ms word" in p) or ("msword" in p) or ("microsoft word" in p)):
+                os.system("START winword")
+            elif ("on screen" in p) and ("keyboard" in p):
+                os.system("START osk")
+            elif ("resource monitor" in p):
+                os.system("START resmon")
+            elif (("sound recorder" in p) or (("record" in p) and ("sound" in p))):
+                os.system("START soundrecorder")
+            elif ("sound" in p) and ("volume" in p):
+                os.system("START sndvol")
+            elif ("system information" in p):
+                os.system("START msinfo32")
+            elif (("task manager" in p) or ("taskmgr" in p)):
+                os.system("START taskmgr")
+            elif ("explorer" in p):
+                os.system("START explorer.exe")
+            elif ("windows update" in p):
+                os.system("START wuapp")
+            elif (("wordpad" in p) or ("word pad" in p)):
+                os.system("START write")
+            elif (("downloads" in p) or ("download" in p)):
+                os.system("START explorer Downloads")
+            elif (("virtualbox" in p) or ("virtual box" in p)):
+                os.system("START VirtualBox")
+            elif ("player" in p):
+                os.system("START dvdplay")
+            elif ("firewall" in p):
+                os.system("START firewall.cpl")
+            elif ("environment variables" in p) or ("environmental variables" in p) or ("environment variable" in p) or ("environmental variable" in p):
+                os.system("START SystemPropertiesAdvanced")
+            elif ("keyboard" in p) and ("properties" in p):
+                os.system("START control keyboard")
+            elif ("date" in p):
+                from datetime import date
+                today = date.today()
+                print("Today's date:", today)
+            elif ("date and time properties" in p) or (("date" in p) or ("time" in p) and ("properties" in p)):
+                os.system("START timedate.cpl")
+            elif (("shut down" in p) or ("turn off" in p)):
+                os.system("shutdown")
+            else:
+                pyttsx3.speak("Wrong input, Say options to view menu")
+                print('dont support')
+        elif (("shut down" in p) or ("turn off" in p)):
+            os.system("shutdown")
+        elif ("exit" in p) or ("quit" in p):
+            print("Terminating.....")
+            break
+        else:
+            pyttsx3.speak("Wrong input, Say options to view menu")
+            print('dont support')
+
+        pyttsx3.speak("You can say quit or exit whenever the work is done")
+
+    else:
+        if ("exit" in p) or ("quit" in p):
+            print("Terminating.....")
+            break
+
+        else:
+            pyttsx3.speak("Say Lucky along with your command")

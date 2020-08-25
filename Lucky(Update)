@@ -33,13 +33,16 @@ while True:
     # Exception handling to handle
     # exceptions at the runtime
     pyttsx3.speak("How could I help you")
-    print('Write "Hey" for text input or press enter to Say', end='\n')
+    print('\nWrite "Hey" for text input or press enter to Say')
     hey = input()
     if ("Hey" in hey):
         print("Write...")
         q = input()
+    elif ("exit" in hey) or ("quit" in hey):
+        print("Terminating.....")
+        break
     else:
-        print("Say(Must include Lucky in command)...")
+        print("Say'Must include Lucky in command'...")
         try:
             # use the microphone as source for input.
             with sr.Microphone() as source2:
@@ -191,13 +194,15 @@ VirtualBox""")
             pyttsx3.speak("Wrong input, Say options to view menu")
             print('dont support')
 
-        pyttsx3.speak("You can say quit or exit whenever the work is done")
+        if("Hey" in hey):
+            pyttsx3.speak("write quit or exit whenever the work is done")
+        else:
+            pyttsx3.speak("You can say quit or exit whenever the work is done")
 
     else:
         if ("exit" in p) or ("quit" in p):
             print("Terminating.....")
             break
 
-        else:
+        elif ("Hey" not in p):
             pyttsx3.speak("Say Lucky along with your command")
-

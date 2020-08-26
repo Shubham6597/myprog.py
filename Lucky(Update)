@@ -105,12 +105,13 @@ Sound Recorder
 Sound Volume
 System Information
 Task Manager
+Time
 WhatsApp Web
 Windows Explorer
 Windows Update
 WordPad
 VirtualBox""")
-        elif (("run" in p) or ("launch" in p) or ("execute" in p) or ("open" in p) or ("show" in p) or ("display" in p) or ("play" in p) or ("close" in p) or ("edit" in p) or ("see" in p) or ("open" in p) or ("check" in p) or ("change" in p) or ("set" in p)):
+        elif (("run" in p) or ("launch" in p) or ("execute" in p) or ("open" in p) or ("show" in p) or ("display" in p) or ("play" in p) or ("close" in p) or ("edit" in p) or ("see" in p) or ("open" in p) or ("check" in p) or ("change" in p) or ("set" in p) or ("tell" in p)):
             if (("chrome" in p) or ("browser" in p) or ("google" in p)):
                 os.system("START chrome")
                 pyttsx3.speak("Opening Chrome")
@@ -208,6 +209,8 @@ VirtualBox""")
                 pyttsx3.speak("Opening keyboard control")
             elif ("date" in p):
                 os.system("date /t")
+            elif ("time" in p):
+                os.system("time /t")
             elif ("date and time properties" in p) or (("date" in p) or ("time" in p) and ("properties" in p)):
                 os.system("START timedate.cpl")
                 pyttsx3.speak("Opening date and time properties")

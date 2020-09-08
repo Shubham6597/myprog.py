@@ -41,4 +41,6 @@ pip install pyttsx3
 Python 3.5 and above with pyttsx3 module 
 Windows Operating System
 
+**Reference used for Speech Recognition**
 
+https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/ 

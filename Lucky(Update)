@@ -5,7 +5,8 @@
 import speech_recognition as sr
 import pyttsx3
 import os
-
+import subprocess
+import webbrowser
 
 # Initialize the recognizer
 r = sr.Recognizer()
@@ -103,6 +104,7 @@ Resource Monitor
 Shut Down Windows
 Sound Recorder
 Sound Volume
+ssh server
 System Information
 Task Manager
 Time
@@ -115,6 +117,24 @@ VirtualBox""")
             if (("chrome" in p) or ("browser" in p) or ("google" in p)):
                 os.system("START chrome")
                 pyttsx3.speak("Opening Chrome")
+            elif (("putty" in p) or ("ssh" in p)):
+                print("Is putty installed on your computer(y/n)")
+                ch = input()
+                if (ch == "n") or (ch == "N"):
+                    print("Shall I open the website to download putty software(y/n))")
+                    agree = input()
+                    if agree == 'y' or agree == "Y":
+                        webbrowser.open("https://www.putty.org/")
+                elif (ch == 'y') or (ch == "Y"):
+                    result = subprocess.getoutput("where putty.exe")
+                    print("Enter ip")
+                    ip = input()
+                    print("Enter user name")
+                    user = input()
+                    print("Enter port no.(by default 22)")
+                    port = input()
+                    subprocess.getoutput(
+                        '"{}" -ssh {}@{} {}'.format(result, user, ip, port))
             elif ("facebook" in p):
                 os.system("START https://www.facebook.com/login/")
                 pyttsx3.speak("Opening facebook")

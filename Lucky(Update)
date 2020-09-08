@@ -1,6 +1,4 @@
-# Python program to translate
-# speech to text and text to speech
-
+# Python assistant to run different Applications on windows
 
 import speech_recognition as sr
 import pyttsx3
@@ -13,7 +11,6 @@ r = sr.Recognizer()
 
 # Function to convert text to
 # speech
-
 
 def SpeakText(command):
 
